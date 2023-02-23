@@ -20,6 +20,9 @@ public function create(){
         'email'=> 'required|email',
         'password'=> 'required|confirmed',
 
+
+  
+
     ]);
 
 

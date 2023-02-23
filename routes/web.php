@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SesionsController;
+use App\Http\Controllers\AdminController;
 use Faker\Guesser\Name;
 
 /*
@@ -42,6 +43,13 @@ Route::post('/login',[SesionsController::class, 'store'])
 Route::get('/logout',[SesionsController::class, 'destroy'])
 ->middleware('auth')
 ->name('login.destroy');  
+
+
+Route::get('/admin',[AdminController::class, 'index'])
+->middleware('auth.admin')
+->name('admin.index');  
+
+
 
 
 
